@@ -19,7 +19,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.8.21"
     id("java-gradle-plugin")
+    id("com.gradle.plugin-publish") version "1.2.0"
 }
+
+group = "au.id.wale"
+version = "0.1.0"
 
 repositories {
     mavenCentral()
@@ -44,9 +48,14 @@ java {
 }
 
 gradlePlugin {
+    website.set("https://github.com/wale/gradle-tailwind")
+    vcsUrl.set("https://github.com/wale/gradle-tailwind")
     plugins {
         create("tailwind") {
             id = "au.id.wale.tailwind"
+            displayName = "TailwindCSS Gradle Plugin"
+            description = "A Gradle plugin to manage TailwindCSS files."
+            tags.set(listOf("tailwind", "css", "web", "frontend"))
             implementationClass = "au.id.wale.tailwind.TailwindPlugin"
         }
     }
