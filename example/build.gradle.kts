@@ -21,4 +21,5 @@ plugins {
 
 tailwind {
     version.set("3.3.2")
+    configPath.set("src/main/resources")
 }

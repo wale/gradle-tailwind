@@ -27,7 +27,7 @@ import javax.inject.Inject
 
 abstract class TailwindExtension @Inject constructor(project: Project) {
     var version: Property<String> = project.objects.property(String::class.java)
-    var config: Property<String> = project.objects.property(String::class.java)
+    var configPath: Property<String> = project.objects.property(String::class.java)
     var input: Property<String> = project.objects.property(String::class.java)
     var output: Property<String> = project.objects.property(String::class.java)
 }

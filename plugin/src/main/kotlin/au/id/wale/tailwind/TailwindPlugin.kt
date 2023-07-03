@@ -17,6 +17,7 @@
 package au.id.wale.tailwind
 
 import au.id.wale.tailwind.tasks.TailwindDownloadTask
+import au.id.wale.tailwind.tasks.TailwindInitTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import java.nio.file.Path
@@ -50,6 +51,12 @@ class TailwindPlugin : Plugin<Project> {
         project.tasks.register("tailwindDownload", TailwindDownloadTask::class.java) {
             it.cacheDir.set(cacheDirectory)
             it.version.set(extension.version)
+        }
+
+        project.tasks.register("tailwindInit", TailwindInitTask::class.java) {
+            it.configPath.set(extension.configPath)
+            it.version.set(extension.version)
+            it.cacheDir.set(cacheDirectory)
         }
     }
 }

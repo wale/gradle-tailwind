@@ -24,8 +24,8 @@ And configure your Tailwind application as desired, like so:
 ```groovy
 tailwind {
     version "3.3.2"
-    config "src/resources/tailwind.config.js"
-    input "src/resources/css/tailwind.css"
+    configPath "src/main/resources"
+    input "src/main/resources/css/tailwind.css"
     output "${buildDir}/app.css"
 }
 ```
@@ -40,16 +40,19 @@ And configure your Tailwind application as desired, like so:
 ```kts
 tailwind {
     version.set("3.3.2")
-    config.set("src/resources/tailwind.config.js")
-    input.set("src/resources/css/tailwind.css")
+    configPath.set("src/main/resources")
+    input.set("src/main/resources/css/tailwind.css")
     output.set("${buildDir}/app.css")
 }
 ```
 
 ### Available Tasks
 - `:tailwindDownload` - Downloads the TailwindCSS binary passed through from the config. Automatically run if the version or the cache folder cannot be found.(and on first run)
-- `:tailwindInit` - Initialises the `tailwind.config.js` file with the input and output provided in the config. (**TBC**)
+- `:tailwindInit` - Initialises the `tailwind.config.js` file with the input and output provided in the config. ()
 - `:tailwindCompile` - Compiles the  given Tailwind PostCSS file to the path provided in `output`. (**TBC**)
+
+## Development
+Because Gradle sucks, the only LTS versions that this build allows for are 8 and 11, due to a known issue [with the tests](https://github.com/gradle/gradle/issues/18647). The plugin itself should build with Java 17 in the meantime.
 
 ## License
 This project is licensed under the [Apache 2.0](https://github.com/wale/gradle-tailwind/blob/main/LICENSE) license.
