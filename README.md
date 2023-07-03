@@ -52,7 +52,10 @@ tailwind {
 - `:tailwindCompile` - Compiles the  given Tailwind PostCSS file to the path provided in `output`.
 
 ### Example
-There is a
+There is a working example containing a rudimentary Tailwind project. To compile the CSS and view the HTML properly, run the following task:
+```bash
+./gradlew :example:tailwindCompile
+```
 
 ## Development
 Because Gradle sucks, the only LTS versions that this build allows for are 8 and 11, due to a known issue [with the tests](https://github.com/gradle/gradle/issues/18647). The plugin itself should build with Java 17 in the meantime.
