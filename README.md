@@ -48,7 +48,7 @@ tailwind {
 
 ### Available Tasks
 - `:tailwindDownload` - Downloads the TailwindCSS binary passed through from the config. Automatically run if the version or the cache folder cannot be found.(and on first run)
-- `:tailwindInit` - Initialises the `tailwind.config.js` file with the input and output provided in the config. ()
+- `:tailwindInit` - Initialises the `tailwind.config.js` file with the input and output provided in the config.
 - `:tailwindCompile` - Compiles the  given Tailwind PostCSS file to the path provided in `output`. (**TBC**)
 
 ## Development
