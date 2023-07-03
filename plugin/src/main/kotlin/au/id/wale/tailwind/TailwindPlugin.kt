@@ -16,6 +16,7 @@
 
 package au.id.wale.tailwind
 
+import au.id.wale.tailwind.tasks.TailwindCompileTask
 import au.id.wale.tailwind.tasks.TailwindDownloadTask
 import au.id.wale.tailwind.tasks.TailwindInitTask
 import org.gradle.api.Plugin
@@ -56,6 +57,14 @@ class TailwindPlugin : Plugin<Project> {
         project.tasks.register("tailwindInit", TailwindInitTask::class.java) {
             it.configPath.set(extension.configPath)
             it.version.set(extension.version)
+            it.cacheDir.set(cacheDirectory)
+        }
+
+        project.tasks.register("tailwindCompile", TailwindCompileTask::class.java) {
+            it.configPath.set(extension.configPath)
+            it.version.set(extension.version)
+            it.input.set(extension.input)
+            it.output.set(extension.output)
             it.cacheDir.set(cacheDirectory)
         }
     }

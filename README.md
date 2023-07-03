@@ -25,8 +25,8 @@ And configure your Tailwind application as desired, like so:
 tailwind {
     version "3.3.2"
     configPath "src/main/resources"
-    input "src/main/resources/css/tailwind.css"
-    output "${buildDir}/app.css"
+    input layout.projectDirectory.file("src/main/resources/tailwind/tailwind.css")
+    output layout.projectDirectory.file("src/main/resources/css/example.css")
 }
 ```
 #### Kotlin DSL
@@ -41,15 +41,18 @@ And configure your Tailwind application as desired, like so:
 tailwind {
     version.set("3.3.2")
     configPath.set("src/main/resources")
-    input.set("src/main/resources/css/tailwind.css")
-    output.set("${buildDir}/app.css")
+    input.set(layout.projectDirectory.file("src/main/resources/tailwind/tailwind.css"))
+    output.set(layout.projectDirectory.file("src/main/resources/css/example.css"))
 }
 ```
 
 ### Available Tasks
 - `:tailwindDownload` - Downloads the TailwindCSS binary passed through from the config. Automatically run if the version or the cache folder cannot be found.(and on first run)
 - `:tailwindInit` - Initialises the `tailwind.config.js` file with the input and output provided in the config.
-- `:tailwindCompile` - Compiles the  given Tailwind PostCSS file to the path provided in `output`. (**TBC**)
+- `:tailwindCompile` - Compiles the  given Tailwind PostCSS file to the path provided in `output`.
+
+### Example
+There is a
 
 ## Development
 Because Gradle sucks, the only LTS versions that this build allows for are 8 and 11, due to a known issue [with the tests](https://github.com/gradle/gradle/issues/18647). The plugin itself should build with Java 17 in the meantime.

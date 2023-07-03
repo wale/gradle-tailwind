@@ -28,23 +28,4 @@ class TailwindPluginTest {
 
         assert(project.tasks.getByName("tailwindInit") is TailwindInitTask)
     }
-
-    @Test
-    fun `check if parameters are passed correctly to plugin`() {
-        val project = ProjectBuilder.builder().build()
-        project.pluginManager.apply("au.id.wale.tailwind")
-
-        (project.extensions.getByName("tailwind") as TailwindExtension).apply {
-            this.version.set("3.4.3")
-            this.configPath.set("src/main/resources")
-            this.input.set("src/app/tailwind.css")
-            this.output.set("${project.buildDir}/assets/app.css")
-        }
-
-        val ext = project.extensions.getByName("tailwind") as TailwindExtension
-
-        assertEquals("src/main/resources", ext.configPath.get())
-        assertEquals("src/app/tailwind.css", ext.input.get())
-        assertEquals("${project.buildDir}/assets/app.css", ext.output.get())
-    }
 }

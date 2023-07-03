@@ -22,4 +22,6 @@ plugins {
 tailwind {
     version.set("3.3.2")
     configPath.set("src/main/resources")
+    input.set(layout.projectDirectory.file("src/main/resources/tailwind/tailwind.css"))
+    output.set(layout.projectDirectory.file("src/main/resources/css/example.css"))
 }

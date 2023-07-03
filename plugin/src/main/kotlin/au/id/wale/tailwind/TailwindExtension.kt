@@ -16,6 +16,7 @@
 package au.id.wale.tailwind
 
 import org.gradle.api.Project
+import org.gradle.api.file.RegularFile
 import org.gradle.api.provider.Property
 import javax.inject.Inject
 
@@ -28,6 +29,6 @@ import javax.inject.Inject
 abstract class TailwindExtension @Inject constructor(project: Project) {
     var version: Property<String> = project.objects.property(String::class.java)
     var configPath: Property<String> = project.objects.property(String::class.java)
-    var input: Property<String> = project.objects.property(String::class.java)
-    var output: Property<String> = project.objects.property(String::class.java)
+    var input: Property<RegularFile> = project.objects.fileProperty()
+    var output: Property<RegularFile> = project.objects.fileProperty()
 }
