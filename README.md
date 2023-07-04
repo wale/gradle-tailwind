@@ -1,9 +1,9 @@
+![Gradle Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/au.id.wale.tailwind)
 # `gradle-tailwind`
 `gradle-tailwind` is a plugin for the [Gradle](https://gradle.org) build manager for the [TailwindCSS](https://tailwindcss.com) framework.
 
 > **NOTE**
-> This Gradle plugin is currently incomplete, so some information listed here does not apply fully yet.
-> The plugin is currently *not* on the Gradle plugin marketplace.
+> This Gradle plugin is currently in _alpha_, so some information listed here does not apply fully yet.
 
 ## How To Use
 ### Requirements
