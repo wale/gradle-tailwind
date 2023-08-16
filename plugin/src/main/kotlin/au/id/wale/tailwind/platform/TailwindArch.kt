@@ -18,6 +18,6 @@ package au.id.wale.tailwind.platform
 enum class TailwindArch(val binaryArch: String) {
     X86_64("x64"),
     AARCH32("armv7"),
-    AARCH64("armv8"),
+    AARCH64("arm64"),
     UNKNOWN("")
 }
