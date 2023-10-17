@@ -35,7 +35,7 @@ class TailwindPlugin : Plugin<Project> {
     }
 
     override fun apply(project: Project) {
-        val extension = project.extensions.create("tailwind", TailwindExtension::class.java, project)
+        val extension = project.extensions.create("tailwind", TailwindExtension::class.java)
 
         val cacheDirectory: Path = Optional.ofNullable(project.findProperty("au.id.wale.tailwind.cache.dir") as String?)
             .map(Paths::get)

@@ -17,16 +17,16 @@ The plugin configuration is simple, just see the following section for the relev
 First, add your plugin like so:
 ```groovy
 plugins {
-    id "au.id.wale.tailwind" version "0.1.0"
+    id "au.id.wale.tailwind" version "0.2.0"
 }
 ```
 And configure your Tailwind application as desired, like so:
 ```groovy
 tailwind {
-    version "3.3.2"
-    configPath "src/main/resources"
-    input layout.projectDirectory.file("src/main/resources/tailwind/tailwind.css")
-    output layout.projectDirectory.file("src/main/resources/css/example.css")
+    version = "3.3.3"
+    configPath = "src/main/resources"
+    input = "src/main/resources/tailwind/tailwind.css"
+    output = "src/main/resources/css/example.css"
 }
 ```
 #### Kotlin DSL
@@ -37,14 +37,24 @@ plugins {
 }
 ```
 And configure your Tailwind application as desired, like so:
-```kts
-tailwind {
-    version.set("3.3.2")
-    configPath.set("src/main/resources")
-    input.set(layout.projectDirectory.file("src/main/resources/tailwind/tailwind.css"))
-    output.set(layout.projectDirectory.file("src/main/resources/css/example.css"))
-}
-```
+- Gradle <8.1
+    ```kts
+    tailwind {
+        version.set("3.3.3")
+        configPath.set("src/main/resources")
+        input.set("src/main/resources/tailwind/tailwind.css")
+        output.set("src/main/resources/css/example.css")
+    }
+    ```
+- Gradle >8.1
+    ```kotlin
+    tailwind {
+        version = "3.3.3"
+        configPath = "src/main/resources"
+        input = "src/main/resources/tailwind/tailwind.css"
+        output = "src/main/resources/css/example.css"
+    }
+    ```
 
 ### Available Tasks
 - `:tailwindDownload` - Downloads the TailwindCSS binary passed through from the config. Automatically run if the version or the cache folder cannot be found.(and on first run)

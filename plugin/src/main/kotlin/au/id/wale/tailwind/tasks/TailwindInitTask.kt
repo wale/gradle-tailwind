@@ -1,6 +1,7 @@
 package au.id.wale.tailwind.tasks
 
 import org.gradle.api.GradleException
+import org.gradle.api.file.RelativePath
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.TaskAction
@@ -20,11 +21,11 @@ abstract class TailwindInitTask : BaseTailwindTask() {
 
     @TaskAction
     fun initTailwind() {
-        val file = File(configPath.get())
+        val file = RelativePath.parse(false, configPath.get()).getFile(project.projectDir)
         if (!file.isDirectory) {
             throw GradleException("The path in `tailwind.configPath` is a file, not a directory.")
-        } else if(Files.notExists(Path(configPath.get()))) {
-            throw GradleException("The path in `tailwind.configPath` does not exist. Create it before running this task.")
+        } else if(Files.notExists(file.toPath())) {
+            throw GradleException("The path in `tailwind.configPath` does not exist.")
         } else {
             val args = arrayListOf<String>()
             args += "init"
