@@ -23,7 +23,7 @@ plugins {
 }
 
 group = "au.id.wale"
-version = "0.2.0"
+version = "0.3.0"
 
 repositories {
     mavenCentral()
@@ -48,8 +48,8 @@ java {
 }
 
 gradlePlugin {
-    website.set("https://github.com/wale/gradle-tailwind")
-    vcsUrl.set("https://github.com/wale/gradle-tailwind")
+    website.set("https://codeberg.org/wale/gradle-tailwind")
+    vcsUrl.set("https://codeberg.org/wale/gradle-tailwind")
     plugins {
         create("tailwind") {
             id = "au.id.wale.tailwind"

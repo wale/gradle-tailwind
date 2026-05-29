@@ -1,9 +1,12 @@
 ![Gradle Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/au.id.wale.tailwind)
+
 # `gradle-tailwind`
 `gradle-tailwind` is a plugin for the [Gradle](https://gradle.org) build manager for the [TailwindCSS](https://tailwindcss.com) framework.
 
 > **NOTE**
-> This Gradle plugin is currently in _alpha_, so some information listed here does not apply fully yet.
+> This Gradle plugin is currently in _alpha_. However, it should work out-of-the-box in production environments.
+> 
+> However, if you come up with an issue - let me know in the [Codeberg issues page](https://codeberg.org/wale/gradle-tailwind/issues).
 
 ## How To Use
 ### Requirements
@@ -17,13 +20,13 @@ The plugin configuration is simple, just see the following section for the relev
 First, add your plugin like so:
 ```groovy
 plugins {
-    id "au.id.wale.tailwind" version "0.2.0"
+    id "au.id.wale.tailwind" version "0.3.0"
 }
 ```
 And configure your Tailwind application as desired, like so:
 ```groovy
 tailwind {
-    version = "3.3.3"
+    version = "4.0.0"
     configPath = "src/main/resources"
     input = "src/main/resources/tailwind/tailwind.css"
     output = "src/main/resources/css/example.css"
@@ -33,14 +36,14 @@ tailwind {
 First, add your plugin like so:
 ```kts
 plugins {
-    id("au.id.wale.tailwind") version "0.1.0"
+    id("au.id.wale.tailwind") version "0.3.0"
 }
 ```
 And configure your Tailwind application as desired, like so:
 - Gradle <8.1
     ```kts
     tailwind {
-        version.set("3.3.3")
+        version.set("4.0.0")
         configPath.set("src/main/resources")
         input.set("src/main/resources/tailwind/tailwind.css")
         output.set("src/main/resources/css/example.css")
@@ -49,12 +52,17 @@ And configure your Tailwind application as desired, like so:
 - Gradle >8.1
     ```kotlin
     tailwind {
-        version = "3.3.3"
+        version = "4.0.0"
         configPath = "src/main/resources"
         input = "src/main/resources/tailwind/tailwind.css"
         output = "src/main/resources/css/example.css"
     }
     ```
+
+### Tailwind v3 -> v4 Migration
+Make sure to review the TailwindCSS [upgrade guide](https://tailwindcss.com/docs/upgrade-guide). 
+
+There are **zero** changes required for your Gradle configuration - it just works, given you've completed all your changes for Tailwind v4.
 
 ### Available Tasks
 - `:tailwindDownload` - Downloads the TailwindCSS binary passed through from the config. Automatically run if the version or the cache folder cannot be found.(and on first run)
