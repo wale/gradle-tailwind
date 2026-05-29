@@ -22,7 +22,7 @@ plugins {
 }
 
 tailwind {
-    version = "3.3.3"
+    version = "4.3.0"
     configPath = "src/main/resources"
     input = "src/main/resources/tailwind/tailwind.css"
     output = "src/main/resources/css/example.css"

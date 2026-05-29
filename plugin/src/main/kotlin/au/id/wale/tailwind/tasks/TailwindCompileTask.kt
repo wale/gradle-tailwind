@@ -14,6 +14,7 @@ import kotlin.io.path.Path
 abstract class TailwindCompileTask : BaseTailwindTask() {
     init {
         description = "Compiles Tailwind sources to a CSS file"
+        dependsOn("tailwindDownload")
     }
 
     @get:Input

@@ -40,3 +40,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Exclude tailwindCompile output ###
+/example/src/main/resources/css/
