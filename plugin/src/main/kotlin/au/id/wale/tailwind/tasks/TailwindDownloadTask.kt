@@ -58,6 +58,12 @@ abstract class TailwindDownloadTask : DefaultTask() {
 
     @TaskAction
     fun downloadTailwind() {
+        // Rudimentary version check, break on major versions =< tailwind v3
+        if (version.get().split(".")[0] <= "3") {
+            throw IllegalArgumentException("This plugin no longer supports TailwindCSS v3 or lower. Update to the latest " +
+                    "version by setting the `version` property.")
+        }
+
         if(!getBinary().get().asFile.exists()) {
             Files.createDirectories(getBinary().get().asFile.toPath().parent)
 
