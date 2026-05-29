@@ -36,11 +36,10 @@ abstract class TailwindCompileTask : BaseTailwindTask() {
             args += "-o"
             args += output.absolutePath
 
-            project.providers.exec {
-                it.workingDir = project.projectDir
-                it.executable = getBinary()
-                it.args = args
-            }
+            ProcessBuilder()
+                .directory(project.projectDir)
+                .command(getBinary(), *args.toTypedArray())
+                .start()
         }
     }
 }
