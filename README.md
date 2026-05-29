@@ -10,8 +10,8 @@
 
 ## How To Use
 ### Requirements
-- Gradle 6+
-- Tailwind 3.0.3+
+- Gradle 8+
+- Tailwind 4.0.0 and above
 
 ### Plugin Configuration
 The plugin configuration is simple, just see the following section for the relevant DSL for your project:
@@ -27,7 +27,6 @@ And configure your Tailwind application as desired, like so:
 ```groovy
 tailwind {
     version = "4.0.0"
-    configPath = "src/main/resources"
     input = "src/main/resources/tailwind/tailwind.css"
     output = "src/main/resources/css/example.css"
 }
@@ -44,7 +43,6 @@ And configure your Tailwind application as desired, like so:
     ```kts
     tailwind {
         version.set("4.0.0")
-        configPath.set("src/main/resources")
         input.set("src/main/resources/tailwind/tailwind.css")
         output.set("src/main/resources/css/example.css")
     }
@@ -53,7 +51,6 @@ And configure your Tailwind application as desired, like so:
     ```kotlin
     tailwind {
         version = "4.0.0"
-        configPath = "src/main/resources"
         input = "src/main/resources/tailwind/tailwind.css"
         output = "src/main/resources/css/example.css"
     }
@@ -62,7 +59,8 @@ And configure your Tailwind application as desired, like so:
 ### Tailwind v3 -> v4 Migration
 Make sure to review the TailwindCSS [upgrade guide](https://tailwindcss.com/docs/upgrade-guide). 
 
-There are **zero** changes required for your Gradle configuration - it just works, given you've completed all your changes for Tailwind v4.
+As for the plugin, make sure to update to version `0.4.0` or above, and remove the `configPath` property from the plugin configuration.
+That's it.
 
 ### Available Tasks
 - `:tailwindDownload` - Downloads the TailwindCSS binary passed through from the config. Automatically run if the version or the cache folder cannot be found.(and on first run)

@@ -15,12 +15,12 @@
  */
 
 plugins {
-    kotlin("jvm") version "1.9.10"
+    kotlin("jvm") version "2.3.21"
     id("java-gradle-plugin")
 }
 
 group = "au.id.wale"
-version = "0.3.0"
+version = "0.4.0"
 
 repositories {
     mavenCentral()

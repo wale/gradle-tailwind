@@ -29,7 +29,6 @@ import javax.inject.Inject
 
 interface TailwindExtension {
     val version: Property<String>
-    val configPath: Property<String>
     val input: Property<String>
     val output: Property<String>
 }

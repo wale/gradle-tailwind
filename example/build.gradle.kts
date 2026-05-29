@@ -1,5 +1,3 @@
-import au.id.wale.tailwind.TailwindExtension
-
 /**
  *    Copyright 2023-present Duale Siad
  *
@@ -23,7 +21,6 @@ plugins {
 
 tailwind {
     version = "4.3.0"
-    configPath = "src/main/resources"
     input = "src/main/resources/tailwind/tailwind.css"
     output = "src/main/resources/css/example.css"
 }

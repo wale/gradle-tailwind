@@ -14,16 +14,18 @@
  *    limitations under the License.
  */
 
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 plugins {
-    kotlin("jvm") version "1.8.21"
+    kotlin("jvm") version "2.3.21"
     id("java-gradle-plugin")
-    id("com.gradle.plugin-publish") version "1.2.0"
+    id("com.gradle.plugin-publish") version "2.1.1"
 }
 
 group = "au.id.wale"
-version = "0.3.0"
+version = "0.4.0"
 
 repositories {
     mavenCentral()
@@ -38,8 +40,12 @@ tasks.test {
     this.jvmArgs = listOf("--add-opens=java.base/java.lang=ALL-UNNAMED")
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+tasks.named<KotlinJvmCompile>("compileKotlin"){
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_1_8
+        languageVersion = KotlinVersion.fromVersion("2.3")
+        apiVersion = KotlinVersion.fromVersion("2.3")
+    }
 }
 
 java {

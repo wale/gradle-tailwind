@@ -2,7 +2,6 @@ package au.id.wale.tailwind.test
 
 import au.id.wale.tailwind.TailwindExtension
 import au.id.wale.tailwind.tasks.TailwindDownloadTask
-import au.id.wale.tailwind.tasks.TailwindInitTask
 import org.gradle.testfixtures.ProjectBuilder
 import org.gradle.testkit.runner.GradleRunner
 import org.junit.jupiter.api.BeforeEach
