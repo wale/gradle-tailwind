@@ -20,7 +20,7 @@ The plugin configuration is simple, just see the following section for the relev
 First, add your plugin like so:
 ```groovy
 plugins {
-    id "au.id.wale.tailwind" version "0.3.0"
+    id "au.id.wale.tailwind" version "0.4.0"
 }
 ```
 And configure your Tailwind application as desired, like so:
@@ -35,7 +35,7 @@ tailwind {
 First, add your plugin like so:
 ```kts
 plugins {
-    id("au.id.wale.tailwind") version "0.3.0"
+    id("au.id.wale.tailwind") version "0.4.0"
 }
 ```
 And configure your Tailwind application as desired, like so:
